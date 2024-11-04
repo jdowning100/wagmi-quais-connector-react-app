@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useQuaisSigner } from './useQuaisProvider';
 
 function App() {
+  const signer = useQuaisSigner({ chainId: 9000 });
   return (
     <div className="App">
       <header className="App-header">

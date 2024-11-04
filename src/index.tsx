@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { WagmiConfig, WagmiProvider } from 'wagmi';
+import { wagmiConfig } from './pelagusConnector';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <WagmiConfig config={wagmiConfig}>
+      <App />
+    </WagmiConfig>
   </React.StrictMode>
 );
 
